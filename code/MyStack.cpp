@@ -74,3 +74,15 @@ void MyStack<INF>::print() {
     }
     std::cout << "\b \n";
 }
+
+template<class INF>
+MyStack<INF>::MyStack(MyStack *stack) {
+    if (stack!= this)
+    {
+        Node* node = top;
+        while (node != nullptr) {
+            stack->push(node->d);
+            node = node->next;
+        }
+    }
+}

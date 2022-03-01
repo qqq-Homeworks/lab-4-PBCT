@@ -26,13 +26,27 @@ class MyStack {
 public:
     MyStack();
     ~MyStack();
+    MyStack(MyStack* stack);
     bool empty();
     void push(INF n);
     bool pop();
     INF top_inf();
     void reverse();
     void print();
+    MyStack &operator=(const MyStack<INF> *stack){
+        ~this;
+        if (stack!= this)
+        {
+            Node* node = top;
+            while (node != nullptr) {
+                stack->push(node->d);
+                node = node->next;
+            }
+        }
+    }
 };
+
+
 
 
 

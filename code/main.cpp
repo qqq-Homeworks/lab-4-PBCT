@@ -16,6 +16,15 @@ int main() {
     stack->push(2);
     stack->push(3);
     stack->push(4);
+    MyStack<int> *stack1 = stack;
+    q = stack1->empty();
+    std::cout << q << '\n';
+    std::cout << stack1->top_inf() << '\n';
+    stack1->pop();
+    std::cout << stack1->top_inf() << '\n';
+    std::cout << '\n';
+
+
 
     q = stack->empty();
     std::cout << q << '\n';
